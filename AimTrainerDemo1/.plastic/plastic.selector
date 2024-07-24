@@ -1,0 +1,4 @@
+repository "AimTrainerDemo1@thehansong@cloud"
+  path "/"
+    br "/main"
+    co "/main"
