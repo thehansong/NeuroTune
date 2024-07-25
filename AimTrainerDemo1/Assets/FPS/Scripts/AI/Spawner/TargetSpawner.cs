@@ -6,8 +6,10 @@ using static UnityEngine.GraphicsBuffer;
 public class TargetSpawner : MonoBehaviour
 {
     public GameObject targetPrefab; // Prefab of the target (sphere)
-    public float spawnInterval = 2f; // Interval between spawns
-    public Vector3 spawnArea = new Vector3(10, 5, 10); // Area within which to spawn targets
+    public float spawnInterval = 0.5f; // Interval between spawns
+    public float lifeTime = 1.0f;
+    public Vector3 minSpawnCoords = new Vector3(-30.7f, 0.4f, 3.3f); // Area within which to spawn targets
+    public Vector3 maxSpawnCoords = new Vector3(-6, 7, 16.7f); // Area within which to spawn targets
 
     void Start()
     {
@@ -17,15 +19,15 @@ public class TargetSpawner : MonoBehaviour
     void SpawnTarget()
     {
         Vector3 spawnPosition = new Vector3(
-            Random.Range(-spawnArea.x / 2, spawnArea.x / 2),
-            Random.Range(-spawnArea.y / 2, spawnArea.y / 2),
-            Random.Range(-spawnArea.z / 2, spawnArea.z / 2)
+            Random.Range(minSpawnCoords.x, maxSpawnCoords.x),
+            Random.Range(minSpawnCoords.y, maxSpawnCoords.y),
+            Random.Range(minSpawnCoords.z, maxSpawnCoords.z)
         );
 
         GameObject target = Instantiate(targetPrefab, spawnPosition, Quaternion.identity);
 
         // Attach Target script to handle self-destruction
         Target targetScript = target.AddComponent<Target>();
-        targetScript.lifetime = 2f; // Set lifetime to 2 seconds
+        targetScript.lifetime = lifeTime; // Set lifetime to 2 seconds
     }
 }
