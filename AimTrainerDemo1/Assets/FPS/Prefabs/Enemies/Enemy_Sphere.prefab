@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 7555028739547754241}
   - component: {fileID: 8812679123849000551}
   - component: {fileID: 1632299577264604771}
-  - component: {fileID: 2942687890958826104}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: Untagged
@@ -84,27 +83,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &2942687890958826104
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 803392853215256072}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2647942480054280528
 GameObject:
   m_ObjectHideFlags: 0
@@ -120,7 +98,6 @@ GameObject:
   - component: {fileID: 7357579525948596896}
   - component: {fileID: 774721811480067135}
   - component: {fileID: 1352782338929420170}
-  - component: {fileID: 7287554203902027401}
   - component: {fileID: 7783164473279927490}
   m_Layer: 0
   m_Name: Enemy_Sphere
@@ -200,8 +177,9 @@ MonoBehaviour:
     m_NumAlphaKeys: 2
   FlashOnHitDuration: 0.5
   DamageTick: {fileID: 0}
-  DeathVfx: {fileID: 0}
-  DeathVfxSpawnPoint: {fileID: 0}
+  DeathVfx: {fileID: 8950624839484268180, guid: 2a8f5052fe50f7b41b17149abb0f7414,
+    type: 3}
+  DeathVfxSpawnPoint: {fileID: 8116728761820335527}
   LootPrefab: {fileID: 0}
   DropRate: 1
   PathReachingRangeColor: {r: 1, g: 0.92156863, b: 0.015686275, a: 1}
@@ -294,20 +272,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Affiliation: 0
   AimPoint: {fileID: 0}
---- !u!114 &7287554203902027401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2647942480054280528}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 14b7698ec50c85c44a849a968dc1d57d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CompassMarkerPrefab: {fileID: 0}
-  TextDirection: 
 --- !u!82 &7783164473279927490
 AudioSource:
   m_ObjectHideFlags: 0
