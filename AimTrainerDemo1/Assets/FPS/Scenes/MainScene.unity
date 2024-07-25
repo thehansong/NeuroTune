@@ -675,6 +675,17 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4008356232935825023, guid: c3f6104c71beb744a98d6e96290a0674,
+        type: 3}
+      propertyPath: DeathVfx
+      value: 
+      objectReference: {fileID: 8950624839484268180, guid: 2a8f5052fe50f7b41b17149abb0f7414,
+        type: 3}
+    - target: {fileID: 4008356232935825023, guid: c3f6104c71beb744a98d6e96290a0674,
+        type: 3}
+      propertyPath: DeathVfxSpawnPoint
+      value: 
+      objectReference: {fileID: 993191349}
     - target: {fileID: 5772440808255991622, guid: c3f6104c71beb744a98d6e96290a0674,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2043,6 +2054,12 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e37fa63419b53f34f99d1b98fda16468, type: 3}
+--- !u!4 &993191349 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8116728761820335527, guid: c3f6104c71beb744a98d6e96290a0674,
+    type: 3}
+  m_PrefabInstance: {fileID: 244135732}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1055004509
 PrefabInstance:
   m_ObjectHideFlags: 0
