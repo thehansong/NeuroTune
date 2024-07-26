@@ -55,16 +55,24 @@ public class TargetSpawner : MonoBehaviour
         Target targetScript = target.AddComponent<Target>();
         targetScript.lifetime = lifeTime; // Set lifetime to 2 seconds
     }
+    public void HitByPlayer()
+    {
+        hits++;
+        Debug.Log("Hit count by player: " + hits);
+        AdjustDifficulty();
+    }
 
     public void Hit()
     {
         hits++;
+        Debug.Log("Hit Count: " + hits);
         AdjustDifficulty();
     }
 
     public void Miss()
     {
         misses++;
+        Debug.Log("Miss Count: " + misses);
         AdjustDifficulty();
     }
 
@@ -78,6 +86,7 @@ public class TargetSpawner : MonoBehaviour
         lastDifficultyAdjustmentTime = Time.time;
 
         float accuracy = (float)hits / (hits + misses);
+        Debug.Log("Accuracy: " + accuracy);
         if (accuracy > 0.8f)
         {
             currentDifficulty += 0.1f; // Increase difficulty

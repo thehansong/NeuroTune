@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.FPS.AI;
+using Unity.FPS.Game;
 using UnityEngine;
 
 public class Target : MonoBehaviour
@@ -9,6 +11,7 @@ public class Target : MonoBehaviour
 
     void Start()
     {
+        EventManager.AddListener<EnemyKillEvent>(OnEnemyKilled2);
         // Destroy the target after 'lifetime' seconds
         Destroy(gameObject, lifetime);
     }
@@ -21,10 +24,8 @@ public class Target : MonoBehaviour
         }
     }
 
-    void OnMouseDown() // Assuming clicking on the target to simulate a hit
+    void OnEnemyKilled2(EnemyKillEvent evt)
     {
-        isHit = true;
-        TargetSpawner.Instance.Hit();
-        Destroy(gameObject);
+        TargetSpawner.Instance.HitByPlayer();
     }
 }

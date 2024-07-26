@@ -21,7 +21,7 @@ namespace Unity.FPS.AI
                 MaterialIndex = index;
             }
         }
-
+        
         [Header("Parameters")]
         [Tooltip("The Y height at which the enemy will be automatically killed (if it falls off of the level)")]
         public float SelfDestructYHeight = -20f;
@@ -338,6 +338,7 @@ namespace Unity.FPS.AI
             }
         }
 
+
         void OnDamaged(float damage, GameObject damageSource)
         {
             // test if the damage source is the player
@@ -359,6 +360,12 @@ namespace Unity.FPS.AI
 
         void OnDie()
         {
+            // Check if was killed by player
+            if (m_Health.LastDamageSource != null && !m_Health.LastDamageSource.GetComponent<EnemyController>())
+            {
+                TargetSpawner.Instance.HitByPlayer();
+            }
+
             // spawn a particle system when dying
             var vfx = Instantiate(DeathVfx, DeathVfxSpawnPoint.position, Quaternion.identity);
             Destroy(vfx, 5f);
@@ -486,5 +493,6 @@ namespace Unity.FPS.AI
                 m_LastTimeWeaponSwapped = Mathf.NegativeInfinity;
             }
         }
+
     }
 }
