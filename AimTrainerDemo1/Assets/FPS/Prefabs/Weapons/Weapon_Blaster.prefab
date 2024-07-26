@@ -194,7 +194,7 @@ MonoBehaviour:
   ShootType: 1
   ProjectilePrefab: {fileID: 8924682559891268397, guid: 3c6b27d949cdda749892906e1f1d1b27,
     type: 3}
-  DelayBetweenShots: 0.3
+  DelayBetweenShots: 0.15
   BulletSpreadAngle: 0
   BulletsPerShot: 1
   RecoilForce: 1
@@ -336,7 +336,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 0.3
+  m_Volume: 0.198
   m_Pitch: 1
   Loop: 0
   Mute: 0
