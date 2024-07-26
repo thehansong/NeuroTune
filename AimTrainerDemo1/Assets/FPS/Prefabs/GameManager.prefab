@@ -446,6 +446,11 @@ MonoBehaviour:
   lifeTime: 2
   minSpawnCoords: {x: -30.7, y: 0.4, z: 3.3}
   maxSpawnCoords: {x: -6, y: 7, z: 16.7}
+  minmaxScale: {x: 0.3, y: 30}
+  difficultyAdjustmentInterval: 2
+  a: 0.2
+  b: 0.1
+  sizeScalingFactor: 5
 --- !u!1 &2038141326299345668
 GameObject:
   m_ObjectHideFlags: 0
@@ -662,6 +667,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1315839542190839937}
     m_Modifications:
+    - target: {fileID: 1672828021, guid: 7ff14361843237d43afc85e1cb16e295, type: 3}
+      propertyPath: m_Color.b
+      value: 0.35686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672828021, guid: 7ff14361843237d43afc85e1cb16e295, type: 3}
+      propertyPath: m_Color.g
+      value: 0.35686275
+      objectReference: {fileID: 0}
+    - target: {fileID: 1672828021, guid: 7ff14361843237d43afc85e1cb16e295, type: 3}
+      propertyPath: m_Color.r
+      value: 0.35686275
+      objectReference: {fileID: 0}
     - target: {fileID: 343473626664863189, guid: 7ff14361843237d43afc85e1cb16e295,
         type: 3}
       propertyPath: m_textAlignment
