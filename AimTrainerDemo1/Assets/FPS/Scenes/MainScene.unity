@@ -3894,50 +3894,15 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
+    - target: {fileID: 3853418198751225113, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
-      propertyPath: lifeTime
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
-        type: 3}
-      propertyPath: minmaxScale.x
-      value: 0.1
+      propertyPath: CrosshairUpdateshrpness
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
       propertyPath: minmaxScale.y
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
-        type: 3}
-      propertyPath: spawnInterval
-      value: 1.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
-        type: 3}
-      propertyPath: maxSpawnInterval
       value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
-        type: 3}
-      propertyPath: minSpawnInterval
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
-        type: 3}
-      propertyPath: sizeScalingFactor
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
-        type: 3}
-      propertyPath: sizeAdditionFactor
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
-        type: 3}
-      propertyPath: difficultyAdjustmentInterval
-      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8041970915285772882, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
