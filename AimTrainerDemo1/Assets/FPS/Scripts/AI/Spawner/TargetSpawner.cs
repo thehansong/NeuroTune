@@ -9,11 +9,16 @@ public class TargetSpawner : MonoBehaviour
     public GameObject targetPrefab;                                     // Prefab of the target (sphere)
     public Vector3 minSpawnCoords = new Vector3(-30.7f, 0.4f, 3.3f);    // Minimum spawn coordinates
     public Vector3 maxSpawnCoords = new Vector3(-6, 7, 16.7f);          // Maximum spawn coordinates
-    public Vector2 minmaxScale = new Vector2(0.1f, 1.0f);               // Minimum and maximum scale for the targets
+
+    [Header("Scale Settings")]
+    [SerializeField]
+    private float defaultScale = 1.0f;                                  // Default scale of the target
+    public float minScale = 0.3f;                                       // Minimum scale of the target
+    public float maxScale = 1.5f;                                       // Maximum scale of the target
 
     [Header("Lifetime Settings")]
     [SerializeField]
-    private float lifeTime = 3.0f;                                       // Initial lifetime of the target in seconds
+    private float lifeTime = 3.0f;                                      // Initial lifetime of the target in seconds
     public float minLifeTime = 1.0f;                                    // Minimum lifetime of the target
     public float maxLifeTime = 5.0f;                                    // Maximum lifetime of the target
 
@@ -57,7 +62,7 @@ public class TargetSpawner : MonoBehaviour
                 Random.Range(minSpawnCoords.z, maxSpawnCoords.z)
             );
 
-            float distance = Vector3.Distance(spawnPosition, Vector3.zero); // Assume player is at (0, 0, 0)
+            float distance = Vector3.Distance(spawnPosition, Vector3.zero); // Player is at (0, 0, 0)
             float targetWidth = CalculateTargetWidth(distance);
 
             GameObject target = Instantiate(targetPrefab, spawnPosition, Quaternion.identity);
@@ -107,14 +112,16 @@ public class TargetSpawner : MonoBehaviour
         float accuracy = (float)hits / (hits + misses);
         Debug.Log("Accuracy: " + accuracy);
 
-        float oldSpawnInterval = spawnInterval; // Save the old spawn interval for comparison
-        float oldLifeTime = lifeTime; // Save the old lifetime for comparison
+        float oldSpawnInterval = spawnInterval;         // Save the old spawn interval for comparison
+        float oldLifeTime = lifeTime;               // Save the old lifetime for comparison
+        float oldScale = defaultScale;              // Save the old scale for comparison
 
         if (accuracy > 0.8f)
         {
             currentDifficulty += 0.1f; // Increase difficulty
             spawnInterval = Mathf.Max(minSpawnInterval, spawnInterval - 0.1f); // Decrease spawn interval
             lifeTime = Mathf.Max(minLifeTime, lifeTime - 0.1f); // Decrease lifetime
+            defaultScale = Mathf.Max(minScale, defaultScale - 0.1f); // Decrease scale
             Debug.Log("Increased Difficulty: " + currentDifficulty + " | Accuracy: " + accuracy);
         }
         else if (accuracy < 0.5f)
@@ -122,6 +129,7 @@ public class TargetSpawner : MonoBehaviour
             currentDifficulty = Mathf.Max(0.1f, currentDifficulty - 0.1f); // Decrease difficulty
             spawnInterval = Mathf.Min(maxSpawnInterval, spawnInterval + 0.1f); // Increase spawn interval
             lifeTime = Mathf.Min(maxLifeTime, lifeTime + 0.1f); // Increase lifetime
+            defaultScale = Mathf.Min(maxScale, defaultScale + 0.1f); // Increase scale
             Debug.Log("Decreased Difficulty: " + currentDifficulty + " | Accuracy: " + accuracy);
         }
         else
@@ -132,6 +140,7 @@ public class TargetSpawner : MonoBehaviour
         Debug.Log("Adjusted Difficulty: " + currentDifficulty);
         Debug.Log("Spawn Interval changed from " + oldSpawnInterval + " to " + spawnInterval);
         Debug.Log("Lifetime changed from " + oldLifeTime + " to " + lifeTime);
+        Debug.Log("Scale changed from " + oldScale + " to " + defaultScale);
 
         hits = 0;
         misses = 0;
@@ -146,16 +155,18 @@ public class TargetSpawner : MonoBehaviour
 
     private float CalculateTargetWidth(float distance)
     {
-        // Use Fitts' Law to calculate target width and apply addition factor
+        // Fitts' Law to calculate target width and apply addition factor
         float index = (currentDifficulty - a) / b;
         float targetWidth = sizeAdditionFactor + (2 * distance / Mathf.Pow(2, index));
 
-        // Debug information
-        Debug.Log("Distance: " + distance);
-        Debug.Log("Index: " + index);
-        Debug.Log("Unclamped Target Width: " + targetWidth);
+        // Ensure initial targets start at the default scale
+        if (currentDifficulty == 1.0f)
+        {
+            targetWidth = defaultScale;
+        }
 
-        targetWidth = Mathf.Clamp(targetWidth, minmaxScale.x, minmaxScale.y); // Clamp target width to the defined range
+        // Clamp target width to the defined range
+        targetWidth = Mathf.Clamp(targetWidth, minScale, maxScale);
 
         Debug.Log("Clamped Target Width: " + targetWidth); // Log the calculated width for debugging
         return targetWidth;

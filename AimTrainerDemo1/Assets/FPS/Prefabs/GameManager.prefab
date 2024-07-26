@@ -444,7 +444,9 @@ MonoBehaviour:
     type: 3}
   minSpawnCoords: {x: -30.7, y: 0.4, z: 3.3}
   maxSpawnCoords: {x: -6, y: 7, z: 16.7}
-  minmaxScale: {x: 0.5, y: 2}
+  defaultScale: 1
+  minScale: 0.5
+  maxScale: 2
   lifeTime: 1.5
   minLifeTime: 1
   maxLifeTime: 5
