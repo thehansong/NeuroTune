@@ -3892,17 +3892,17 @@ PrefabInstance:
     - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
       propertyPath: spawnInterval
-      value: 2
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
       propertyPath: maxSpawnInterval
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
       propertyPath: minSpawnInterval
-      value: 0.2
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
@@ -3917,7 +3917,7 @@ PrefabInstance:
     - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
       propertyPath: difficultyAdjustmentInterval
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 8041970915285772882, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
