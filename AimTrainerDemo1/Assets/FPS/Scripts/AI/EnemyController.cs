@@ -363,6 +363,7 @@ namespace Unity.FPS.AI
             // Check if was killed by player
             if (m_Health.LastDamageSource != null && !m_Health.LastDamageSource.GetComponent<EnemyController>())
             {
+                AudioUtility.CreateSFX(DamageTick, transform.position, AudioUtility.AudioGroups.DamageTick, 0f);
                 TargetSpawner.Instance.HitByPlayer();
             }
             else
