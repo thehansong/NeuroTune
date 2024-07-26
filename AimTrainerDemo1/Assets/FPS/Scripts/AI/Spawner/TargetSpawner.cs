@@ -9,9 +9,9 @@ public class TargetSpawner : MonoBehaviour
     public GameObject targetPrefab; // Prefab of the target (sphere)
     public float spawnInterval = 0.5f; // Interval between spawns
     public float lifeTime = 1.0f;
-    public Vector3 minSpawnCoords   = new Vector3(-30.7f, 0.4f, 3.3f);  // Area within which to spawn targets
-    public Vector3 maxSpawnCoords   = new Vector3(-6, 7, 16.7f);        // Area within which to spawn targets
-    public Vector2 minmaxScale      = new Vector2(0.3f, 2.0f);          // Adjust max size
+    public Vector3 minSpawnCoords = new Vector3(-30.7f, 0.4f, 3.3f);  // Area within which to spawn targets
+    public Vector3 maxSpawnCoords = new Vector3(-6, 7, 16.7f);        // Area within which to spawn targets
+    public Vector2 minmaxScale = new Vector2(0.3f, 2.0f);          // Adjust max size
 
     private int hits = 0;
     private int misses = 0;
@@ -55,6 +55,7 @@ public class TargetSpawner : MonoBehaviour
         Target targetScript = target.AddComponent<Target>();
         targetScript.lifetime = lifeTime; // Set lifetime to 2 seconds
     }
+
     public void HitByPlayer()
     {
         hits++;

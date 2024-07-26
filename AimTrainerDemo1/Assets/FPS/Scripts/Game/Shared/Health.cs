@@ -6,9 +6,7 @@ namespace Unity.FPS.Game
     public class Health : MonoBehaviour
     {
         [Tooltip("Maximum amount of health")] public float MaxHealth = 10f;
-
-        [Tooltip("Health ratio at which the critical health vignette starts appearing")]
-        public float CriticalHealthRatio = 0.3f;
+        [Tooltip("Health ratio at which the critical health vignette starts appearing")] public float CriticalHealthRatio = 0.3f;
 
         public UnityAction<float, GameObject> OnDamaged;
         public UnityAction<float> OnHealed;
@@ -84,6 +82,11 @@ namespace Unity.FPS.Game
             {
                 m_IsDead = true;
                 OnDie?.Invoke();
+                if (Events.EnemyKillEvent.Enemy != gameObject)
+                {
+                    Events.EnemyKillEvent.Enemy = gameObject;
+                    EventManager.Broadcast(Events.EnemyKillEvent);
+                }
             }
         }
     }

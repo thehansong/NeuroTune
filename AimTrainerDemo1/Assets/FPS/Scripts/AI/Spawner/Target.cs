@@ -11,7 +11,6 @@ public class Target : MonoBehaviour
 
     void Start()
     {
-        EventManager.AddListener<EnemyKillEvent>(OnEnemyKilled2);
         // Destroy the target after 'lifetime' seconds
         Destroy(gameObject, lifetime);
     }
@@ -22,10 +21,5 @@ public class Target : MonoBehaviour
         {
             TargetSpawner.Instance.Miss();
         }
-    }
-
-    void OnEnemyKilled2(EnemyKillEvent evt)
-    {
-        TargetSpawner.Instance.HitByPlayer();
     }
 }
