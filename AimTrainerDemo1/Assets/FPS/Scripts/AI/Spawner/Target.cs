@@ -7,19 +7,26 @@ using UnityEngine;
 public class Target : MonoBehaviour
 {
     public float lifetime = 2f; // Lifetime of the target in seconds
-    private bool isHit = false;
+    private Health healthComponent;
+
 
     void Start()
     {
-        // Destroy the target after 'lifetime' seconds
-        Destroy(gameObject, lifetime);
+        healthComponent = GetComponent<Health>();
+        if (healthComponent == null)
+        {
+            return;
+        }
+        
+
     }
 
-    void OnDestroy()
+    private void Update()
     {
-        if (!isHit)
+        lifetime -= Time.deltaTime;
+        if (lifetime <= 0)
         {
-            TargetSpawner.Instance.Miss();
+            healthComponent.TakeDamage(healthComponent.CurrentHealth, gameObject);
         }
     }
 }

@@ -365,19 +365,13 @@ namespace Unity.FPS.AI
             {
                 TargetSpawner.Instance.HitByPlayer();
             }
-
-            // spawn a particle system when dying
-            var vfx = Instantiate(DeathVfx, DeathVfxSpawnPoint.position, Quaternion.identity);
-            Destroy(vfx, 5f);
+            else
+            {
+                TargetSpawner.Instance.Miss();
+            }
 
             // tells the game flow manager to handle the enemy destuction
             m_EnemyManager.UnregisterEnemy(this);
-
-            // loot an object
-            if (TryDropItem())
-            {
-                Instantiate(LootPrefab, transform.position, Quaternion.identity);
-            }
 
             // this will call the OnDestroy function
             Destroy(gameObject, DeathDuration);
