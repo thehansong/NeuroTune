@@ -17,6 +17,9 @@ namespace Unity.FPS.UI
         [Tooltip("Slider component for look sensitivity")]
         public Slider LookSensitivitySlider;
 
+        [Tooltip("InputField component for look sensitivity")]
+        public InputField LookSensitivityInputField;
+
         [Tooltip("Toggle component for shadows")]
         public Toggle ShadowsToggle;
 
@@ -49,6 +52,9 @@ namespace Unity.FPS.UI
 
             LookSensitivitySlider.value = m_PlayerInputsHandler.LookSensitivity;
             LookSensitivitySlider.onValueChanged.AddListener(OnMouseSensitivityChanged);
+
+            LookSensitivityInputField.text = m_PlayerInputsHandler.LookSensitivity.ToString("F2");
+            LookSensitivityInputField.onEndEdit.AddListener(OnMouseSensitivityInputFieldChanged);
 
             ShadowsToggle.isOn = QualitySettings.shadows != ShadowQuality.Disable;
             ShadowsToggle.onValueChanged.AddListener(OnShadowsChanged);
@@ -129,6 +135,15 @@ namespace Unity.FPS.UI
         void OnMouseSensitivityChanged(float newValue)
         {
             m_PlayerInputsHandler.LookSensitivity = newValue;
+        }
+
+        void OnMouseSensitivityInputFieldChanged(string newValue)
+        {
+            if (float.TryParse(newValue, out float sensitivity))
+            {
+                m_PlayerInputsHandler.LookSensitivity = sensitivity;
+                LookSensitivitySlider.value = sensitivity;
+            }
         }
 
         void OnShadowsChanged(bool newValue)
