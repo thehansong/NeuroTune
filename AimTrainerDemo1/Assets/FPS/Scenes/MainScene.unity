@@ -3819,20 +3819,55 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3235725121711991747, guid: c996b53e9f849234393d1e90f68d1679,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.7411765
+      objectReference: {fileID: 0}
+    - target: {fileID: 3235725121711991747, guid: c996b53e9f849234393d1e90f68d1679,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3235725121711991747, guid: c996b53e9f849234393d1e90f68d1679,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3235725121711991747, guid: c996b53e9f849234393d1e90f68d1679,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
       propertyPath: lifeTime
-      value: 10
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
+        type: 3}
+      propertyPath: minmaxScale.x
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
       propertyPath: minmaxScale.y
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
       propertyPath: spawnInterval
-      value: 10
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
+        type: 3}
+      propertyPath: maxSpawnInterval
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
+        type: 3}
+      propertyPath: minSpawnInterval
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
@@ -3841,8 +3876,13 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
+      propertyPath: sizeAdditionFactor
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3948496666133704128, guid: c996b53e9f849234393d1e90f68d1679,
+        type: 3}
       propertyPath: difficultyAdjustmentInterval
-      value: 60
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8041970915285772882, guid: c996b53e9f849234393d1e90f68d1679,
         type: 3}
