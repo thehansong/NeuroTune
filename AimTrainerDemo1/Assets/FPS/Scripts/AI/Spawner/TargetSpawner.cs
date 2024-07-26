@@ -1,33 +1,35 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class TargetSpawner : MonoBehaviour
 {
     public static TargetSpawner Instance { get; private set; }
 
-    public GameObject targetPrefab; // Prefab of the target (sphere)
+    [Header("Target Settings")]
+    public GameObject targetPrefab;                                     // Prefab of the target (sphere)
+    public float lifeTime = 3.0f;                                       // Lifetime of the target in seconds
+    public Vector3 minSpawnCoords = new Vector3(-30.7f, 0.4f, 3.3f);    // Minimum spawn coordinates
+    public Vector3 maxSpawnCoords = new Vector3(-6, 7, 16.7f);          // Maximum spawn coordinates
+    public Vector2 minmaxScale = new Vector2(0.1f, 1.0f);               // Minimum and maximum scale for the targets
+
+    [Header("Spawn Settings")]
     [SerializeField]
-    private float spawnInterval = 0.5f; // Interval between spawns
-    public float lifeTime = 1.0f;
-    public Vector3 minSpawnCoords = new Vector3(-30.7f, 0.4f, 3.3f);  // Area within which to spawn targets
-    public Vector3 maxSpawnCoords = new Vector3(-6, 7, 16.7f);        // Area within which to spawn targets
-    public Vector2 minmaxScale = new Vector2(0.3f, 2.0f);          // Adjust max size
+    private float spawnInterval = 2.0f;                                 // Init spawn interval between spawns
+    public float minSpawnInterval = 0.2f;                               // Minimum interval between spawns
+    public float maxSpawnInterval = 4.0f;                               // Maximum interval between spawns
+
+    [Header("Difficulty Settings")]
+    public float difficultyAdjustmentInterval = 3.0f;                   // Time interval to adjust difficulty
+    private float lastDifficultyAdjustmentTime = 0;
+    private float currentDifficulty = 1.0f;                             // Initial difficulty level
+
+    [Header("Fitts' Law Constants")]
+    public float a = 0.2f;
+    public float b = 0.1f;
+    public float sizeAdditionFactor = 1f;
 
     private int hits = 0;
     private int misses = 0;
-    private float lastDifficultyAdjustmentTime = 0;
-    public float difficultyAdjustmentInterval = 2f;                     // Time interval to adjust difficulty
-    private float currentDifficulty = 1f;                               // Initial difficulty level
-
-    public float minSpawnInterval = 0.2f; // Minimum interval between spawns
-    public float maxSpawnInterval = 2.0f; // Maximum interval between spawns
-
-    // Fitts' Law constants
-    public float a = 0.2f;
-    public float b = 0.1f;
-    public float sizeAdditionFactor = 1f; // Addition factor to adjust target size
-
     private Coroutine spawnCoroutine;
 
     void Awake()
@@ -50,7 +52,7 @@ public class TargetSpawner : MonoBehaviour
                 Random.Range(minSpawnCoords.z, maxSpawnCoords.z)
             );
 
-            float distance = Vector3.Distance(spawnPosition, Vector3.zero); // Assume player is at (0, 0, 0)
+            float distance = Vector3.Distance(spawnPosition, Vector3.zero); // player @zerozero
             float targetWidth = CalculateTargetWidth(distance);
 
             GameObject target = Instantiate(targetPrefab, spawnPosition, Quaternion.identity);
@@ -61,7 +63,7 @@ public class TargetSpawner : MonoBehaviour
 
             // Attach Target script to handle self-destruction
             Target targetScript = target.AddComponent<Target>();
-            targetScript.lifetime = lifeTime; // Set lifetime to 2 seconds
+            targetScript.lifetime = lifeTime;
 
             yield return new WaitForSeconds(spawnInterval);
         }
@@ -135,7 +137,7 @@ public class TargetSpawner : MonoBehaviour
 
     private float CalculateTargetWidth(float distance)
     {
-        // Use Fitts' Law to calculate target width and apply addition factor
+        // Fitts' Law to calculate target width and apply addition factor
         float index = (currentDifficulty - a) / b;
         float targetWidth = sizeAdditionFactor + (2 * distance / Mathf.Pow(2, index));
 
