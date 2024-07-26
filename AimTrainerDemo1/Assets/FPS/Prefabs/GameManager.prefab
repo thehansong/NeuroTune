@@ -442,15 +442,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPrefab: {fileID: 2647942480054280528, guid: c3f6104c71beb744a98d6e96290a0674,
     type: 3}
-  spawnInterval: 0.5
-  lifeTime: 2
+  spawnInterval: 1
+  lifeTime: 1.5
   minSpawnCoords: {x: -30.7, y: 0.4, z: 3.3}
   maxSpawnCoords: {x: -6, y: 7, z: 16.7}
-  minmaxScale: {x: 0.3, y: 30}
+  minmaxScale: {x: 0.1, y: 0.2}
   difficultyAdjustmentInterval: 2
   a: 0.2
   b: 0.1
-  sizeScalingFactor: 5
+  sizeAdditionFactor: 1
 --- !u!1 &2038141326299345668
 GameObject:
   m_ObjectHideFlags: 0
