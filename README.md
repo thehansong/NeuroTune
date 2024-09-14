@@ -6,7 +6,7 @@
   <tr>
     <td>
       <a href="https://github.com/thehansong">
-        <img src="https://github.com/thehansong.png?size=75" alt="Hans ONG" style="border-radius: 50%; width: 75px; height: 75px;"/>
+        <img src="https://github.com/thehansong.png?size=75" alt="Hans ONG" style="border-radius: 50%; width: 50px; height: 50px;"/>
       </a>
     </td>
     <td style="vertical-align: middle; padding-right: 20px;">
@@ -14,7 +14,7 @@
     </td>
     <td>
       <a href="https://github.com/Markkeroni">
-        <img src="https://github.com/Markkeroni.png?size=75" alt="Mark LOW" style="border-radius: 50%; width: 75px; height: 75px;"/>
+        <img src="https://github.com/Markkeroni.png?size=75" alt="Mark LOW" style="border-radius: 50%; width: 50px; height: 50px;"/>
       </a>
     </td>
     <td style="vertical-align: middle;">
