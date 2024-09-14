@@ -27,7 +27,7 @@
 ## Training your aim, one adaptive target at a time  
 **NeuroTune** is an AI-driven aim trainer that adapts in real-time to improve your FPS skills by dynamically adjusting the size, spawn location, and lifetime of targets based on your performance.
 
-![Gameplay Screenshot](https://i.imgur.com/xdKiV4v.png)
+![Gameplay Screenshot](https://i.imgur.com/n5pMEFw.jpeg)
 
 ## Inspiration  
 As competitive gaming and eSports gain momentum, we recognized a gap in personalized training tools. Traditional aim trainers like **Aim Lab** and **Kovaak's** offer great scenarios, but they lack real-time adaptability and personalization. NeuroTune was developed to address these limitations by creating an adaptive, AI-enhanced system that continuously challenges the user based on their current skill level, making training more efficient and engaging.
