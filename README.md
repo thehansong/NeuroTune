@@ -6,26 +6,23 @@
   <tr>
     <td>
       <a href="https://github.com/thehansong">
-        <img src="https://github.com/thehansong.png?size=512" alt="Hans ONG" style="border-radius: 50%; width: 55px; height: 55px;"/>
+        <img src="https://github.com/thehansong.png?size=75" alt="Hans ONG" style="border-radius: 50%; width: 75px; height: 75px;"/>
       </a>
     </td>
-    <td style="vertical-align: middle;">
-      <a href="https://github.com/thehansong">Hans ONG</a>
+    <td style="vertical-align: middle; padding-right: 20px;">
+      <a href="https://github.com/thehansong">Hans ONG</a> - AI & Gameplay Developer
     </td>
-    <td style="vertical-align: middle;">AI & Gameplay Developer</td>
-  </tr>
-  <tr>
     <td>
       <a href="https://github.com/Markkeroni">
-        <img src="https://github.com/Markkeroni.png?size=512" alt="Mark LOW" style="border-radius: 50%; width: 55px; height: 55px;"/>
+        <img src="https://github.com/Markkeroni.png?size=75" alt="Mark LOW" style="border-radius: 50%; width: 75px; height: 75px;"/>
       </a>
     </td>
     <td style="vertical-align: middle;">
-      <a href="https://github.com/Markkeroni">Mark LOW</a>
+      <a href="https://github.com/Markkeroni">Mark LOW</a> - AI & Gameplay Developer
     </td>
-    <td style="vertical-align: middle;">AI & Gameplay Developer</td>
   </tr>
 </table>
+
 
 ## Training your aim, one adaptive target at a time  
 **NeuroTune** is an AI-driven aim trainer that adapts in real-time to improve your FPS skills by dynamically adjusting the size, spawn location, and lifetime of targets based on your performance.
