@@ -9,7 +9,7 @@ As competitive gaming and eSports gain momentum with titles like **Counter-Strik
 ## ▶️ Gameplay Demo Video 
 
 <p align="center">
-  <a href="https://youtu.be/LgvffxYfYks">
+  <a href="https://www.youtube.com/watch?v=4m7v8S-D6N8">
     <img src="https://img.youtube.com/vi/LgvffxYfYks/maxresdefault.jpg" alt="Watch the demo" style="border: 3px solid #ccc; border-radius: 8px; position: relative;">
     <span style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 32px; color: white; text-shadow: 0 0 8px #000;">▶ Play Video</span>
   </a>
